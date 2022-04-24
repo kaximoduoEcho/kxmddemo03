@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>首页</title>
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/animate.min.css">
+    <link rel="stylesheet" href="css/public.css">
+
+</head>
+
+<body>
+
+    <!-- header开始 -->
+    <img src="./img/top.jpg" alt="" class="top">
+    <!-- <a href="https://www.ahpu.edu.cn/" title="点击前往安徽工程大学官网" id="idName"><img src="./img/top2.png" alt="" id="top_2"></a> -->
+    <!-- 导航栏开始 -->
+
+    <!-- <header >
+        <nav>
+          <ul>
+            <li><a href="index.html">首页</a></li>
+            <li><a href="second.html">吃货专区</a></li>
+            <li><a href="third.html">校园风景</a></li>
+            <li><a href="forth.html">动漫分享</a></li>
+            <li><a href="book.html">书单分享</a></li>
+            <li><a href="sixth.html">联系我们</a></li>
+            <div class="slider" id="up"></div>
+          </ul>
+        </nav>
+      </header> -->
+
+    <div class="nav">
+        <div class="nav-1">
+            <div class="nav-char"><a href="index.html">首页</a></div>
+            <div class="nav-line-1"></div>
+        </div>
+
+        <div class="nav-2">
+            <div class="nav-char"><a href="second.html">吃货专区</a></div>
+            <div class="nav-line"></div>
+        </div>
+        <div class="nav-2">
+            <div class="nav-char"><a href="third.html">校园风景</a></div>
+            <div class="nav-line"></div>
+        </div>
+        <div class="nav-2">
+            <div class="nav-char"><a href="forth.html">动漫分享</a></div>
+            <div class="nav-line"></div>
+        </div>
+        <div class="nav-2">
+            <div class="nav-char"><a href="book.html">书单分享</a></div>
+            <div class="nav-line"></div>
+        </div>
+        <div class="nav-2">
+            <div class="nav-char"><a href="sixth.html">联系我们</a></div>
+            <div class="nav-line"></div>
+        </div>
+    </div>
+
+    <!-- 中间的大盒子 -->
+    <div class="center">
+        <!-- 左边的盒子 -->
+        <div class="left-box">
+            <div class="left-box-above">
+                <div class="left-box-above-above">
+                    开心一刻
+                </div>
+                <div class="left-box-above-medium">
+                    <div id="app">
+                        <input type="button" value="点击获取" @click="getJoke" class="appbutton">
+                        <!-- <button value="点击获取" @click="getJoke" class="appbutton"></button> -->
+                        <p>{{joke}}</p>
+                    </div>
+
+                </div>
+
+            </div>
+            <!-- <div class="left-box-below">
+
+                <div class="video-1">
+                    <p>Video</p>
+                </div>
+                <video id="video" width="370px" height="160px" controls loop muted  src="img/video.mp4"  ></video>
+            </div> -->
+        </div>
+        <div class="medium">
+            <!-- 这里是两行大的文字 -->
+            <div class="title">
+                <p id="wellcome_1" class="animate__animated animate__backInDown">WELLCOME</p>
+                <p id="wellcome_2" class="animate__animated animate__swing">分享，我们是认真的</p>
+            </div>
+            <!-- 下面插入轮播图 -->
+            <div id="wrap">
+                <div class="img-list">
+                    <img src="img/bg1.png" alt="">
+                    <img src="img/bg2.png" alt="">
+                    <img src="img/bg3.png" alt="">
+                    <img src="img/bg4.png" alt="">
+                    <img src="img/bg5.png" alt="">
+                    <img src="img/bg6.png" alt="">
+                    <img src="img/bg7.png" alt="">
+                    <img src="img/bg8.png" alt="">
+                    <img src="img/bg9.png" alt="">
+                </div>
+                <!-- 小箭头 -->
+                <div class="arrow">
+                    <a href="javascript:;" class="left"><
+                        </a>
+                            <a href="javascript:;" class="right">></a>
+                </div>
+
+                <!-- 小圆点 -->
+                <ul class="circle-list">
+                    <li class="circle active" data-n="0"></li>
+                    <li class="circle" data-n="1"></li>
+                    <li class="circle" data-n="2"></li>
+                    <li class="circle" data-n="3"></li>
+                    <li class="circle" data-n="4"></li>
+                    <li class="circle" data-n="5"></li>
+                    <li class="circle" data-n="6"></li>
+                    <li class="circle" data-n="7"></li>
+                    <li class="circle" data-n="8"></li>
+                </ul>
+            </div>
+        </div>
+        <div class="right-box">
+            <!-- <div class="video-2">
+               
+            </div>
+             -->
+            <div class="news" style="margin-top: 250px">
+                <div class="new">
+                    <p class="news-p">学校新闻</p>
+                    <p class="news-eng">News Section</p>
+                </div>
+                <div class="list-a">
+                    <a href="https://www.ahpu.edu.cn/2022/0417/c5a170860/page.htm" class="li-1">1.关于全面转入线上教学的通知</a><br>
+                    <a href="http://www.wuhunews.cn/djzx/p/2902114.html" class="li-2">2.致芜湖全体市民的一封信</a><br>
+                    <a href="https://www.ahpu.edu.cn/2022/0415/c3a170818/page.htm" class="li-3">3.学校慰问疫情防疫志愿者</a><br>
+                    <a href="https://www.ahpu.edu.cn/2022/0417/c3a170877/page.htm"
+                        class="li-4">4.学校及时部署校园疫情防控...</a><br>
+                    <a href="https://www.ahpu.edu.cn/2022/0415/c3a170827/page.htm" class="li-5">5.首场线下“师生共读”...</a><br>
+                </div>
+                <div class="more">
+                    <!-- <a href="https://www.ahpu.edu.cn/" >More Search</a> -->
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="team">
+        <p id="teamclass">团队成员</p>
+        <div class="threeofman">
+
+            <div class="threeofman1">
+
+                <div class="scene1">
+                    <div class="box1">
+                        <div class="box1-front">
+                            <img src="./img/ltl.jpg" alt="" width="350px" height="400px">
+                        </div>
+                        <div class="box1-mind"></div>
+                        <div class="box1-back" style="color: white; font-size: 18px;">我不是李铁林</div>
+                    </div>
+                </div>
+
+                <div class="name1">
+                    <p>朱峰</p>
+                <div>出生年月：2002年3月21日</div>
+                <div>爱&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;好：阅读，羽毛球</div>
+
+                </div>
+            </div>
+
+            <div class="threeofman2">
+                <div class="scene2">
+                    <div class="box2">
+                        <div class="box2-front">
+                            <img src="./img/ltl.jpg" alt="" width="350px" height="400px">
+                        </div>
+                        <div class="box2-mind"></div>
+                        <div class="box2-back" style="color: white; font-size: 18px;">我也不是李铁林</div>
+                    </div>
+                </div>
+                <div class="name2">
+                    <p>李苏安</p>
+                    <div>出生年月：2002年3月21日</div>
+                    <div>爱&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;好：阅读，羽毛球</div>
+                </div>
+               
+            </div>
+
+
+            <div class="threeofman3">
+                <div class="scene3">
+                    <div class="box3">
+                        <div class="box3-front">
+                            <img src="./img/ltl.jpg" alt="" width="350px" height="400px">
+                        </div>
+                        <div class="box3-mind"></div>
+                        <div class="box3-back" style="color: white; font-size: 18px;">我才是李铁林</div>
+                    </div>
+                </div>
+                <div class="name2">
+                    <p>李铁林</p>
+                <div>出生年月：2002年3月21日</div>
+                <div>爱&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;好：阅读，羽毛球</div>
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+
+
+    <!-- <div class="team">
+        <p id="teamclass">团队成员</p>
+        <div id="teamintroduce">
+            <div id="zf">
+                <img src="./img/ltl.jpg" alt="">
+                <p>朱峰</p>
+                <div>出生年月：2002年3月21日</div>
+                <div>爱&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;好：阅读，羽毛球</div>
+            </div>
+
+            <div id="ltl">
+                <img src="./img/ltl.jpg" alt="">
+                <p>李铁林</p>
+                <div>出生年月：2002年3月21日</div>
+                <div>爱&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;好：阅读，羽毛球</div>
+
+            </div>
+            <div id="lsa">
+                <img src="./img/ltl.jpg" alt="">
+                <p>李苏安</p>
+                <div>出生年月：2002年3月21日</div>
+                <div>爱&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;好：阅读，羽毛球</div>
+            </div>
+        </div>
+    </div> -->
+
+    <!-- 这里是底部的盒子 -->
+    <div class="footer">
+        <div class="footer-first">
+            <div class="first-first">欢迎您，玩的愉快！
+
+            </div>
+            <div class="first-second">Have A Nice Day!
+
+            </div>
+
+        </div>
+        <div class="footer-second">
+            <div class="second-first">
+                <div class="sff">关于我们</div>
+                <div class="sfs"></div>
+                <div class="sft">The three of us are sophomores of Anhui Engineering University. We have just studied
+                    web development. Our website may not be satisfactory, but this is the result of our best efforts.
+                    Thank you for clicking into this rough web page. I wish you a happy life！</div>
+            </div>
+
+            <div class="second-second">
+                <div class="ssf">作者寄语</div>
+                <div class="sss"></div>
+                <div class="sst">The most important thing is to be healthy. Please exercise actively, drink more water
+                    and breathe more fresh air. Please don't often eat junk food and stay up late. Without health, there
+                    is nothing. Dear readers, I wish you a healthy body.
+                </div>
+
+            </div>
+            <div class="second-third">
+                <div class="stf">衷心祝福</div>
+                <div class="sts"></div>
+                <div class="stt">My friend, please cherish your life now. It may be a bad situation now, but please
+                    remember that "opportunities are for those who are prepared". Move forward bravely and don't look
+                    back. Best wishes to you, my friend！
+                </div>
+            </div>
+
+        </div>
+        <div class="line"></div>
+        <div class="footer-third">
+            <div class="third-first">
+                <div>地址：安徽工程大学</div>
+                <div>QQ:2584599385</div>
+                <div>邮箱:lisuanecho@163.com</div>
+                <div>电话:19556276706</div>
+            </div>
+            <!-- <div class="third-second">
+                版权所有@执剑人卡西莫多
+            </div> -->
+
+        </div>
+
+    </div>
+
+
+</body>
+<script type="text/javascript" src="./js/index.js"></script>
+<script type="text/javascript" src="./js/public.js"></script>
+
+
+
+</html>
